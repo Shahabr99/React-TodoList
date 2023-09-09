@@ -35,7 +35,7 @@ const NewTodoForm = ({addTodo}) => {
           <label htmlFor="task"></label>
           <input id="task" placeholder="Task" name="task" value={formData.task} onChange={handleChange} />
         </div>
-        <button type="submit">Add</button>
+        <button>Add</button>
       </form>
     </>
   )

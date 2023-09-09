@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { v4 as uuid } from 'uuid';
 import NewTodoForm from 'react';
 import Todo from './Todo'
 
@@ -6,6 +7,7 @@ import Todo from './Todo'
 const TodoList = () => {
 
   const INITIAL_STATE = [{
+    id: uuid(),
     topic: "",
     task: ""
   }]
@@ -15,7 +17,7 @@ const TodoList = () => {
   const addTodo = (topic, task) => {
     setTodos(data => ([
       ...data,
-      {topic, task}
+      { topic, task, id:uuid() }
     ]))
   }
 
@@ -26,7 +28,7 @@ const TodoList = () => {
         <NewTodoForm addTodo={addTodo} />
       </div>
       <div>
-        {todos.map(todo => <Todo topic={topic} task={task} />)}
+        {todos.map(todo => <Todo key={todo.id} topic={todo.topic} task={todo.task} />)}
       </div>
     </>
   )
