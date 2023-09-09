@@ -1,11 +1,14 @@
 import React from 'react';
+import './Todo.css';
 
-
-const Todo = (props) => {
+const Todo = ({ topic, task }) => {
   return (
-    <>
-      <div></div>
-    </>
+    <div className="task">
+      
+        <h4>{topic}</h4>
+        <p>{task}</p>
+      
+    </div>
   )
 }
 

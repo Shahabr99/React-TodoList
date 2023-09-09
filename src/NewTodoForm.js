@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Formik, Form, Field, ErrorMessage} from 'formik';
+// import {Formik, Form, Field, ErrorMessage} from 'formik';
 
 const NewTodoForm = ({addTodo}) => {
   const INITIAL_VALUES = {
@@ -18,9 +18,9 @@ const NewTodoForm = ({addTodo}) => {
   }
 
   const handleSubmit = (e) => {
-    e.preventDeafult()
+    e.preventDefault()
     addTodo(formData.topic, formData.task)
-    setFormData({})
+    setFormData(INITIAL_VALUES)
   }
 
 
@@ -28,11 +28,11 @@ const NewTodoForm = ({addTodo}) => {
     <>
       <form onSubmit={handleSubmit} >
         <div>
-          <label htmlFor="topic"></label>
+          <label htmlFor="topic">Topic: </label>
           <input id="topic" placeholder="Task Topic" name="topic" value={formData.topic} onChange={handleChange} />
         </div>
         <div>
-          <label htmlFor="task"></label>
+          <label htmlFor="task">Task: </label>
           <input id="task" placeholder="Task" name="task" value={formData.task} onChange={handleChange} />
         </div>
         <button>Add</button>
