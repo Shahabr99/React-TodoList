@@ -6,13 +6,11 @@ import Todo from './Todo'
 
 const TodoList = () => {
 
-  const INITIAL_STATE = [{
-    id: uuid(),
-    topic: "",
-    task: ""
-  }]
+  const INITIAL_STATE = []
+
 
   const [todos, setTodos] = useState(INITIAL_STATE);
+
 
   const addTodo = (topic, task) => {
     setTodos(data => ([
